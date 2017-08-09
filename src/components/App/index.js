@@ -1,42 +1,49 @@
-import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
+// Import styles
+import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
+
 import Sidebar from '../Sidebar';
 
-class App extends Component {
-	render() {
-		return (
-			<div
-				id="wrapper"
-				className="sidebar-open"
-				ref={c => { this.wrapper = c; }}
-			>
-				<Sidebar />
-				<div id="page-content-wrapper">
-					<div className="container-fluid">
-						<div className="row">
-							<div className="col-lg-12">
-								<h1>Learn DraftJS</h1>
-								<p>This is the starter template!</p>
-								<p>Let's create some kick-ass <code>draft-js</code> tutorials.</p>
-								<a
-									className="btn btn-default"
-									id="sidebar-toggle"
-									onClick={(e) => {
-										e.preventDefault();
-										this.wrapper.classList.toggle('sidebar-open');
-									}}
-								>
-									Toggle Sidebar
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		);
-	}
-}
+import Introduction from '../DraftTuts/Introduction';
+import DataModel from '../DraftTuts/DataModel';
+import EditorState from '../DraftTuts/EditorState';
+import SelectionState from '../DraftTuts/SelectionState';
+import ContentState from '../DraftTuts/ContentState';
+import Entities from '../DraftTuts/Entities';
+import Decorators from '../DraftTuts/Decorators';
+import MoreDraftJS from '../DraftTuts/MoreDraftJS';
+import RichUtils from '../DraftTuts/RichUtils';
+import InlineStyles from '../DraftTuts/InlineStyles';
+import BlockStyling from '../DraftTuts/BlockStyling';
+import HandleBeforeInput from '../DraftTuts/BlockStyling';
+import KeyBinding from '../DraftTuts/KeyBinding';
 
-export default App;
+const App = () => (
+	<Router>
+		<div
+			id="wrapper"
+			className="sidebar-open"
+		>
+			<Route path="/" component={Sidebar}/>
+
+			<Route exact path="/" component={Introduction}/>
+			<Route path="/data-model" component={DataModel}/>
+			<Route path="/editor-state" component={EditorState}/>
+			<Route path="/selection-state" component={SelectionState}/>
+			<Route path="/content-state" component={ContentState}/>
+			<Route path="/entities" component={Entities}/>
+			<Route path="/decorators" component={Decorators}/>
+			<Route path="/more-draftjs" component={MoreDraftJS}/>
+			<Route path="/rich-utils" component={RichUtils}/>
+			<Route path="/inline-styles" component={InlineStyles}/>
+			<Route path="/block-styling" component={BlockStyling}/>
+			<Route path="/handle-before-input" component={HandleBeforeInput}/>
+			<Route path="/key-binding" component={KeyBinding}/>
+		</div>
+	</Router>
+);
+
+export default App
