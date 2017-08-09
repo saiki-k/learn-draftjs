@@ -4,6 +4,10 @@ import Editor from './editor';
 
 export default class IntroductionTut extends Component {
 	render() {
+		const consoleGreeting = "" +
+			"Hello there! :-)\n\n" +
+			"This is an interactive resource for learning DraftJS!\n" +
+			"Check the Explanation section below, to know more!";
 		return (
 			<PageContainer>
 				<div className="row">
@@ -16,7 +20,7 @@ export default class IntroductionTut extends Component {
 					<div className="col-lg-6">
 						<div className="panel panel-primary editor-wrapper">
 							<div className="panel-heading">
-								<h3 className="panel-title">Simple Editor</h3>
+								<h3 className="panel-title">Editor</h3>
 							</div>
 							<div className="panel-body">
 								<Editor />
@@ -30,21 +34,7 @@ export default class IntroductionTut extends Component {
 							</div>
 							<pre className="console-pre">
 								<code>
-									{
-`{
-	"hello": "hi, there!",
-	"hello": "hi, there!",
-	"hello": "hi, there!",
-	"hello": "hi, there!",
-	"hello": "hi, there!",
-	"hello": "hi, there!",
-	"hello": "hi, there!",
-	"hello": "hi, there!",
-	"hello": "hi, there!",
-	"hello": "hi, there!",
-	"hello": "hi, there!",
-}`
-									}
+									{consoleGreeting}
 								</code>
 							</pre>
 						</div>
