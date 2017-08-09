@@ -110,3 +110,8 @@
 		margin-right: 0;
 	}
 }
+
+.console-pre {
+	border: none;
+	margin: 0px;
+}

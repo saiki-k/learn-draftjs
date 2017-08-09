@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import PageContent from '../../PageContent';
+import PageContainer from '../../PageContainer';
 
 export default class DataModelTut extends Component {
 	render() {
 		return (
-			<PageContent {...this.props}>
+			<PageContainer {...this.props}>
 				<p>Hello, world</p>
 				<p>This is the starter template!</p>
 				<p>Let's create some kick-ass <code>draft-js</code> tutorials.</p>
-			</PageContent>
+			</PageContainer>
 		);
 	}
 }
