@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import PageContent from '../../PageContent';
 
 export default class SelectionStateTut extends Component {
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		return (
 			<PageContent {...this.props}>
