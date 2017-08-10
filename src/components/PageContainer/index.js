@@ -6,11 +6,7 @@ const PageContainer = (props) => (
 			<div className="row">
 				<div className="col-lg-12">
 					<h1>
-						{
-							props.match.url !== '/'
-								? props.match.url
-								: '/introduction'
-						}
+						{props.match.url !== '/' ? props.match.url : '/intro'}
 					</h1>
 				</div>
 			</div>
