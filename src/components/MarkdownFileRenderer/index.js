@@ -14,16 +14,11 @@ export default class MarkdownFileRenderer extends Component {
 				? hljs.highlight(lang, code).value
 				: code;
 				return (
-					'<div class="panel panel-primary code-wrapper">' +
-						'<div class="panel-heading">' +
-							'<h2 class="panel-title">Code</h2>' +
-						'</div>' +
-						'<pre class=hljs-pre>' +
+					'<pre class=hljs-pre>' +
 						`<code class="hljs ${lang}">` +
 							`${highlightedCode}` +
 						'</code>' +
-						'</pre>' +
-					'</div>'
+					'</pre>' 
 				);
 		};
 		marked.setOptions({ renderer });

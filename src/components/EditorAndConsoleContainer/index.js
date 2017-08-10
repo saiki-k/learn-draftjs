@@ -3,11 +3,14 @@ import React, { Component } from 'react';
 export default class EditorAndConsoleContainer extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { consoleLog: this.props.message || '' };
+		this.initialMessage = this.props.message || '';
+		this.state = { consoleLog: this.initialMessage };
 	}
 
-	setConsoleLog = (consoleLog) => this.setState({ consoleLog });
-	clearConsole = () => this.setConsoleLog('');
+	consoleLog = (consoleLog) => this.setState(
+		{ consoleLog: this.initialMessage + consoleLog }
+	);
+	clearConsole = () => this.consoleLog(this.initialMessage);
 
 	render() {
 		const editorContainer = (editor) => (
@@ -44,7 +47,7 @@ export default class EditorAndConsoleContainer extends Component {
 					React.cloneElement(
 						this.props.children,
 						{
-							setConsoleLog: this.setConsoleLog,
+							consoleLog: this.consoleLog,
 							clearConsole: this.clearConsole
 						}
 					)

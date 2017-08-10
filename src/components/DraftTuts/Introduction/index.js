@@ -12,7 +12,7 @@ export default class IntroductionTut extends Component {
 		const message = "" +
 			"Hello there! :-)\n\n" +
 			"This is an interactive resource for learning DraftJS!\n" +
-			"Check the Explanation section below, to know more!";
+			"Check the Explanation section below, to know more!\n\n";
 		return (
 			<PageContainer {...this.props}>
 				<EditorAndConsoleContainer message={message}>
