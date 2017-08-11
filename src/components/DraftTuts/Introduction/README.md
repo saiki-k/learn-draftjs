@@ -26,6 +26,7 @@ In other words, we are just replacing our traditional `console.log` with `this.p
 
 To your left are the various DraftJS topics (you're at **Introduction**) that you can savor. It is recommended that you go through them linearly, especially if you're just beginning out with DraftJS.
 
+<!--
 ### Code
 
 Finally, below is the **complete code** snippet which makes up the above Editor component. We will revisit all the parts in the following snippet step by step.
@@ -59,3 +60,4 @@ export default class DraftTutsEditor extends Component {
   }
 }
 ```
+-->

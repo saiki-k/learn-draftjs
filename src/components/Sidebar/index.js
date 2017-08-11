@@ -38,18 +38,9 @@ const Sidebar= ({ match }) => (
 			</li>
 
 			<li className="sidebar-main-item">
-				<Link to={`${match.url}draftjs-api`}>
-					DraftJS API
+				<Link to={`${match.url}utils`}>
+					Utils
 				</Link>
-			</li>
-			<li>
-				<Link to={`${match.url}rich-utils`}>Rich Utils</Link>
-			</li>
-			<li>
-				<Link to={`${match.url}inline-styles`}>Inline Styles</Link>
-			</li>
-			<li>
-				<Link to={`${match.url}block-styling`}>Block Styling</Link>
 			</li>
 		</ul>
 	</div>

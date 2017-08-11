@@ -18,12 +18,7 @@ import ContentState from '../DraftTuts/ContentState';
 import Entities from '../DraftTuts/Entities';
 import Decorators from '../DraftTuts/Decorators';
 
-import DraftJSAPI from '../DraftTuts/DraftJSAPI';
-import RichUtils from '../DraftTuts/RichUtils';
-import InlineStyles from '../DraftTuts/InlineStyles';
-import BlockStyling from '../DraftTuts/BlockStyling';
-import HandleBeforeInput from '../DraftTuts/BlockStyling';
-import KeyBinding from '../DraftTuts/KeyBinding';
+import Utils from '../DraftTuts/Utils';
 
 const App = () => (
 	<Router>
@@ -42,12 +37,7 @@ const App = () => (
 			<Route path="/content-state" component={ContentState}/>
 			<Route path="/entities" component={Entities}/>
 			<Route path="/decorators" component={Decorators}/>
-			<Route path="/draftjs-api" component={DraftJSAPI}/>
-			<Route path="/rich-utils" component={RichUtils}/>
-			<Route path="/inline-styles" component={InlineStyles}/>
-			<Route path="/block-styling" component={BlockStyling}/>
-			<Route path="/handle-before-input" component={HandleBeforeInput}/>
-			<Route path="/key-binding" component={KeyBinding}/>
+			<Route path="/utils" component={Utils}/>
 		</div>
 	</Router>
 );
