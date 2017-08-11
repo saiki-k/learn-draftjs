@@ -19,6 +19,8 @@ import Decorators from '../DraftTuts/Decorators';
 
 import Utils from '../DraftTuts/Utils';
 
+import Examples from '../DraftTuts/Examples';
+
 const App = () => (
 	<Router>
 		<div
@@ -38,6 +40,8 @@ const App = () => (
 			<Route path="/decorators" component={Decorators}/>
 
 			<Route path="/utils" component={Utils}/>
+
+			<Route path="/examples" component={Examples}/>
 		</div>
 	</Router>
 );

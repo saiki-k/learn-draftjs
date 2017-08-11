@@ -22,7 +22,7 @@ export default class DataModelTutsEditor extends Component {
 							onClick: () => this.props.consoleLog(
 								JSON.stringify(this.state.editorState.toJS(), null, 4)
 							),
-							text: "Log Editor State",
+							text: "Log EditorState",
 						},
 						{
 							onClick: this.props.clearConsole,

@@ -17,7 +17,7 @@ export default class EditorAndConsoleContainer extends Component {
 			<div className="col-lg-6">
 				<div className="panel panel-primary editor-wrapper">
 					<div className="panel-heading">
-						<h2 className="panel-title">Editor</h2>
+						<h2 className="panel-title">{this.props.editorTitle || 'Editor'}</h2>
 					</div>
 					<div className="panel-body">
 						{editor}

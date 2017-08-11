@@ -39,6 +39,12 @@ const Sidebar= ({ match }) => (
 					Utils
 				</Link>
 			</li>
+
+			<li className="sidebar-main-item">
+				<Link to={`${match.url}examples`}>
+					Examples
+				</Link>
+			</li>
 		</ul>
 	</div>
 );
