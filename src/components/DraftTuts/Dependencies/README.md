@@ -1,4 +1,4 @@
----
+To get a DraftJS editor up, we first need the following dependencies installed!
 
 ### `react react-dom`
 
@@ -6,9 +6,11 @@ As you might already know by now `draft-js` is a React based rich-text editor fr
 
 ### `immutable`
 
-DraftJS stores all the editor data in the form of an immutable record! We will see what that entails, shortly! So `draft-js` also has `immutable` as a dependency.
+DraftJS stores all the editor data in the form of an ImmutableJS [Record](https://facebook.github.io/immutable-js/docs/#/Record)! We will see what that entails, shortly! So `draft-js` also has `immutable` as a dependency.
 
+<!--
 As a side note, DraftJS' API suffices for the majority of changes you would want to do to a DraftJS' editor content; but from experience, when a situation calls for complex customizations to the editor content, we _would_ use `immutable` API on the corresponding immutable data to get the required changes inside the editor.
+-->
 
 ### `babel-polyfill`
 
