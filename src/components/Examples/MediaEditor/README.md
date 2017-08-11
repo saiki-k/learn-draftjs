@@ -71,7 +71,6 @@ export default class MediaEditorExample extends Component {
   }
 
   _promptForMedia(type) {
-    const { editorState } = this.state;
     this.setState({
       showURLInput: true,
       urlValue: '',
@@ -184,7 +183,7 @@ const Audio = (props) => {
 };
 
 const Image = (props) => {
-  return <img src={props.src} style={styles.media}/>;
+  return <img src={props.src} style={styles.media} alt="Example"/>;
 };
 
 const Video = (props) => {

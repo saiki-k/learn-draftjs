@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 
 import PageContainer from '../PageContainer';
-import EditorAndConsoleContainer from '../EditorAndConsoleContainer';
 
 export default class ExamplesTut extends Component {
 	render() {

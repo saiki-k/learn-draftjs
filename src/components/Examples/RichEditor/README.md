@@ -6,9 +6,9 @@
 import React, { Component } from 'react';
 import { Editor, EditorState, RichUtils, convertToRaw } from 'draft-js';
 
-import ConsoleButtons from '../../../ConsoleButtons';
+import ConsoleButtons from '../../ConsoleButtons';
 
-export default class RichEditorExample extends React.Component {
+export default class RichEditorExample extends Component {
   constructor(props) {
     super(props);
     this.state = { editorState: EditorState.createEmpty() };
