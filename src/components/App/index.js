@@ -19,7 +19,9 @@ import Decorators from '../DraftTuts/Decorators';
 
 import Utils from '../DraftTuts/Utils';
 
-import Examples from '../DraftTuts/Examples';
+import Examples from '../Examples';
+import RichEditorExample from '../Examples/RichEditor';
+import MediaEditorExample from '../Examples/MediaEditor';
 
 const App = () => (
 	<Router>
@@ -42,6 +44,8 @@ const App = () => (
 			<Route path="/utils" component={Utils}/>
 
 			<Route path="/examples" component={Examples}/>
+			<Route path="/rich-editor-example" component={RichEditorExample}/>
+			<Route path="/media-editor-example" component={MediaEditorExample}/>
 		</div>
 	</Router>
 );

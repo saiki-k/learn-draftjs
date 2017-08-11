@@ -45,6 +45,12 @@ const Sidebar= ({ match }) => (
 					Examples
 				</Link>
 			</li>
+			<li>
+				<Link to={`${match.url}rich-editor-example`}>Rich Editor</Link>
+			</li>
+			<li>
+				<Link to={`${match.url}media-editor-example`}>Media Editor</Link>
+			</li>
 		</ul>
 	</div>
 );

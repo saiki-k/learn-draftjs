@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { Editor, EditorState, RichUtils, convertToRaw } from 'draft-js';
 
-// Import styles for the editor contents, and controls
-import './index.css';
-
-import ConsoleButtons from '../../../ConsoleButtons';
+import ConsoleButtons from '../../ConsoleButtons';
 
 export default class RichEditorExample extends React.Component {
 	constructor(props) {

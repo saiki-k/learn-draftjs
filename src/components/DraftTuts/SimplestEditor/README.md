@@ -44,7 +44,7 @@ The `Editor` React component is DraftJS' abstraction over `contenteditable`. It 
 
 
 
-### Complete Code
+### Code
 
 ```jsx
 import React, { Component } from 'react';
