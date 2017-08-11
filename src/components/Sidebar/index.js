@@ -22,9 +22,6 @@ const Sidebar= ({ match }) => (
 				</Link>
 			</li>
 			<li>
-				<Link to={`${match.url}editor-state`}>Editor State</Link>
-			</li>
-			<li>
 				<Link to={`${match.url}selection-state`}>Selection State</Link>
 			</li>
 			<li>
