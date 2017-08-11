@@ -217,5 +217,3 @@ const InlineStyleControls = (props) => {
   );
 };
 ```
-
----
