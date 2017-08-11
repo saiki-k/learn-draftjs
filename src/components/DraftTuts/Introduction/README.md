@@ -2,7 +2,7 @@
 
 ## Explanation
 
-DraftJS is a rich-text editor framework written in React, developed at Facebook! Before we dive into serious DraftJS stuff, I would like to give you a **quick introduction** to this resource!
+DraftJS is a rich-text editor framework written in React, developed at Facebook! Before we dive into serious DraftJS stuff, I would like to give you a **quick introduction** to this [**resource**](https://github.com/fatman-/learn-draftjs)!
 
 ### What is this?
 
@@ -21,6 +21,10 @@ To its right (or bottom, based on your layout) the panel named **Console** is wh
 The only difference — instead of using the actual `console.log` function — we use a special function `this.props.consoleLog`, which is made available to the corresponding Editor component.
 
 In other words, we are just replacing our traditional `console.log` with `this.props.consoleLog` for the convenience of checking the console output on the screen, aside the **Editor**.
+
+### Sidebar
+
+To your left are the various DraftJS topics (you're at **Introduction**) that you can savor. It is recommended that you go through them linearly, especially if you're just beginning out with DraftJS.
 
 ### Code
 
@@ -54,5 +58,4 @@ export default class DraftTutsEditor extends Component {
     );
   }
 }
-
 ```

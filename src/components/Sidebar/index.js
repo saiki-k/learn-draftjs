@@ -9,6 +9,12 @@ const Sidebar= ({ match }) => (
 					Introduction
 				</Link>
 			</li>
+			<li>
+				<Link to={`${match.url}dependencies`}>Dependencies</Link>
+			</li>
+			<li>
+				<Link to={`${match.url}simplest-editor`}>Simplest Editor</Link>
+			</li>
 
 			<li className="sidebar-main-item">
 				<Link to={`${match.url}data-model`}>
@@ -32,8 +38,8 @@ const Sidebar= ({ match }) => (
 			</li>
 
 			<li className="sidebar-main-item">
-				<Link to={`${match.url}more-draftjs`}>
-					More DraftJS
+				<Link to={`${match.url}draftjs-api`}>
+					DraftJS API
 				</Link>
 			</li>
 			<li>

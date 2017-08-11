@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PageContainer from '../../PageContainer';
 
-export default class MoreDraftJSTut extends Component {
+export default class DraftJSAPITut extends Component {
 	render() {
 		return (
 			<PageContainer {...this.props}>

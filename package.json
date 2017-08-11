@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "bootstrap": "^3.3.7",
     "draft-js": "^0.10.1",
     "highlight.js": "^9.12.0",

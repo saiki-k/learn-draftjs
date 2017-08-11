@@ -126,6 +126,7 @@ body {
 	border-bottom-right-radius: 4px;
 	margin: 0;
 	font-size: 14px;
+	min-height: 52px;
 }
 
 /* Styles for Syntax Highlighting */
@@ -134,7 +135,6 @@ body {
 	background: #fdf6e3;
 	border: 1px solid #faebcc;
 	border-radius: 4px;
-	margin: 0;
 	font-size: 14px;
 }
 
