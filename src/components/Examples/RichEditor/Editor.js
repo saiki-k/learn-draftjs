@@ -82,7 +82,7 @@ export default class RichEditorExample extends Component {
 								const contentState = this.state.editorState.getCurrentContent();
 								this.props.consoleLog(JSON.stringify(convertToRaw(contentState), null, 4));
 							},
-							text: "Log ContentState",
+							text: "Log Raw ContentState",
 						},
 						{
 							onClick: this.props.clearConsole,

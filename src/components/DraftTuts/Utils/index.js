@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+
 import PageContainer from '../../PageContainer';
+
+import MarkdownFileRenderer from '../../MarkdownFileRenderer';
+import readmeFile from './README.md';
 
 export default class UtilsTut extends Component {
 	render() {
 		return (
 			<PageContainer {...this.props}>
-				<p>Hello, world</p>
-				<p>This is the starter template!</p>
-				<p>Let's create some kick-ass <code>draft-js</code> tutorials.</p>
+				<MarkdownFileRenderer mdFileURL={readmeFile}/>
 			</PageContainer>
 		);
 	}

@@ -161,7 +161,7 @@ export default class MediaEditorExample extends Component {
 					onClick={this.logState}
 					style={styles.button}
 				>
-					Log ContentState
+					Log Raw ContentState
 				</button>
 			</div>
 		);

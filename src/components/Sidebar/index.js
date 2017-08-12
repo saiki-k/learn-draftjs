@@ -28,15 +28,15 @@ const Sidebar= ({ match }) => (
 				<Link to={`${match.url}content-state`}>Content State</Link>
 			</li>
 			<li>
-				<Link to={`${match.url}entities`}>Entities</Link>
+				<Link to={`${match.url}decorators`}>Decorators</Link>
 			</li>
 			<li>
-				<Link to={`${match.url}decorators`}>Decorators</Link>
+				<Link to={`${match.url}entities`}>Entities</Link>
 			</li>
 
 			<li className="sidebar-main-item">
 				<Link to={`${match.url}utils`}>
-					Utils
+					Utils & API
 				</Link>
 			</li>
 
