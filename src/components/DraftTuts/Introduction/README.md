@@ -18,9 +18,9 @@ As you see at the top, there are two interactive panels. The one labeled **Edito
 
 To its right (or bottom, based on your layout) the panel named **Console** is where all the `console.log` messages would go. If you have written something in the editor, you would have noticed that all the contents of the editor are being logged inside this panel!
 
-The only difference — instead of using the actual `console.log` function — we use a special function `this.props.consoleLog`, which is made available to the corresponding Editor component.
+The only difference — instead of using the actual `console.log` function — we use a special function `this.props.consoleLog`, which is made available to the corresponding Editor component. We would also use `JSON.stringify` on the JavaScript objects that we intend to send to `this.props.consoleLog`, so that they are printed in a readable manner!
 
-In other words, we are just replacing our traditional `console.log` with `this.props.consoleLog` for the convenience of checking the console output on the screen, aside the **Editor**.
+In other words, we are just replacing our traditional `console.log` with `this.props.consoleLog`, and `JSON.stringify` for the convenience of checking the console output on the screen, aside the **Editor**.
 
 ### Sidebar
 
