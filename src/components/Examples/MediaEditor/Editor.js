@@ -216,8 +216,8 @@ const styles = {
 	editor: {
 		border: '1px solid #ddd',
 		cursor: 'text',
-		minHeight: '100',
-		padding: '15'
+		minHeight: '100px',
+		padding: '15px'
 	},
 	button: {
 		marginTop: 10,

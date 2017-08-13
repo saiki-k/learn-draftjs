@@ -23,6 +23,8 @@ import Examples from '../Examples';
 import RichEditorExample from '../Examples/RichEditor';
 import MediaEditorExample from '../Examples/MediaEditor';
 
+import ControlledTextarea from '../ControlledTextarea';
+
 const App = () => (
 	<Router>
 		<div
@@ -46,6 +48,8 @@ const App = () => (
 			<Route path="/examples" component={Examples}/>
 			<Route path="/rich-editor-example" component={RichEditorExample}/>
 			<Route path="/media-editor-example" component={MediaEditorExample}/>
+
+			<Route path="/controlled-textarea" component={ControlledTextarea}/>
 		</div>
 	</Router>
 );
