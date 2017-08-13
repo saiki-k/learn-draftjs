@@ -80,6 +80,13 @@ export default class RichEditorExample extends Component {
 						{
 							onClick: () => {
 								const contentState = this.state.editorState.getCurrentContent();
+								this.props.consoleLog(JSON.stringify(contentState.toJS(), null, 4));
+							},
+							text: "Log ContentState",
+						},
+						{
+							onClick: () => {
+								const contentState = this.state.editorState.getCurrentContent();
 								this.props.consoleLog(JSON.stringify(convertToRaw(contentState), null, 4));
 							},
 							text: "Log Raw ContentState",
@@ -174,7 +181,15 @@ const BlockStyleControls = (props) => {
 	const blockType = editorState.getCurrentContent().getBlockForKey(selection.getStartKey()).getType();
 	return (
 		<div className="RichEditor-controls">
-			{BLOCK_TYPES.map((type) => <StyleButton key={type.label} active={type.style === blockType} label={type.label} onToggle={props.onToggle} style={type.style}/>)}
+			{BLOCK_TYPES.map(
+				(type) => <StyleButton
+					key={type.label}
+					active={type.style === blockType}
+					label={type.label}
+					onToggle={props.onToggle}
+					style={type.style}
+				/>
+			)}
 		</div>
 	);
 };
