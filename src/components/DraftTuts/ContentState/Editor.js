@@ -3,7 +3,7 @@ import { Editor, EditorState } from 'draft-js';
 
 import ConsoleButtons from '../../ConsoleButtons';
 
-export default class DataModelTutsEditor extends Component {
+export default class DraftTutsEditor extends Component {
 	constructor(props) {
 		super(props);
 		this.state = { editorState: EditorState.createEmpty() };
