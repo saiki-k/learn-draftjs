@@ -12,6 +12,8 @@ import {
   convertToRaw
 } from 'draft-js';
 
+import ConsoleButtons from '../../ConsoleButtons';
+
 import imageFile from './media.png';
 import audioFile from './media.mp3';
 import videoFile from './media.mp4';
@@ -26,7 +28,11 @@ export default class MediaEditorExample extends Component {
       urlType: ''
     };
     this.focus = () => this.refs.editor.focus();
-    this.logState = () => {
+    this.logContentState = () => {
+      const contentState = this.state.editorState.getCurrentContent();
+      this.props.consoleLog(JSON.stringify(contentState.toJS(), null, 4));
+    };
+    this.logRawContentState = () => {
       const contentState = this.state.editorState.getCurrentContent();
       this.props.consoleLog(JSON.stringify(convertToRaw(contentState), null, 4));
     };
@@ -161,13 +167,22 @@ export default class MediaEditorExample extends Component {
             ref="editor"
           />
         </div>
-        <button
-          className="btn btn-default"
-          onClick={this.logState}
-          style={styles.button}
-        >
-          Log ContentState
-        </button>
+        <ConsoleButtons
+          buttons={[
+            {
+              onClick: this.logContentState,
+              text: "Log ContentState",
+            },
+            {
+              onClick: this.logRawContentState,
+              text: "Log Raw ContentState",
+            },
+            {
+              onClick: this.props.clearConsole,
+              text: "Clear Console",
+            },
+          ]}
+        />
       </div>
     );
   }
@@ -221,8 +236,7 @@ const styles = {
   editor: {
     border: '1px solid #ddd',
     cursor: 'text',
-    minHeight: '100',
-    padding: '15'
+    padding: '15px'
   },
   button: {
     marginTop: 10,
