@@ -138,6 +138,18 @@ body {
 	font-size: 14px;
 }
 
+.readme-img {
+	border: 1px solid #faebcc;
+	border-radius: 6px;
+	width: auto;
+	height: 420px;
+	padding: 6px;
+}
+
+.readme-img .no-padding {
+	padding: 0px;
+}
+
 .hljs {
 	display: block;
 	overflow-x: auto;

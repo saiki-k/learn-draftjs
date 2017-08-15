@@ -6,7 +6,9 @@ DraftJS is a rich-text editor framework written in React, developed at Facebook!
 
 ### What is this?
 
-This is an interactive DraftJS learning resource, setup using `create-react-app`, `react-router-browser`, `marked`, `bootstrap`, and of course `draft-js`, and `immutable` npm packages; for the sole purpose of making the learning ride easy to DraftJS' newcomers.
+I've struggled with wrapping my head around all the aspects of DraftJS when I started exploring it! This is something that I would have preferred when I started learning DraftJS!
+
+You're looking at an interactive DraftJS learning resource, setup using `create-react-app`, and friends, of course `draft-js`, and `immutable` npm packages; for the sole purpose of making the learning ride easy to DraftJS' newcomers.
 
 If you already know React, and want to learn DraftJS, then you're probably at the right place!
 

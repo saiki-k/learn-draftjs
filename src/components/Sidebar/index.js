@@ -53,8 +53,8 @@ const Sidebar= ({ match }) => (
 			</li>
 
 			<li className="sidebar-main-item">
-				<Link to={`${match.url}controlled-textarea`}>
-					Controlled Textarea
+				<Link to={`${match.url}textareas`}>
+					Textareas
 				</Link>
 			</li>
 		</ul>
