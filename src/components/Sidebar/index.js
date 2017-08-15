@@ -51,12 +51,6 @@ const Sidebar= ({ match }) => (
 			<li>
 				<Link to={`${match.url}media-editor-example`}>Media Editor</Link>
 			</li>
-
-			<li className="sidebar-main-item">
-				<Link to={`${match.url}textareas`}>
-					Textareas
-				</Link>
-			</li>
 		</ul>
 	</div>
 );
