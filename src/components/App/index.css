@@ -96,27 +96,25 @@ body {
 	background: none;
 }
 
-@media(min-width:768px) {
-	#wrapper {
-		padding-left: 0;
-	}
-	#wrapper.sidebar-open {
-		padding-left: 250px;
-	}
-	#sidebar-wrapper {
-		width: 0;
-	}
-	#wrapper.sidebar-open #sidebar-wrapper {
-		width: 250px;
-	}
-	#page-content-wrapper {
-		padding: 20px;
-		position: relative;
-	}
-	#wrapper.sidebar-open #page-content-wrapper {
-		position: relative;
-		margin-right: 0;
-	}
+#wrapper {
+	padding-left: 0;
+}
+#wrapper.sidebar-open {
+	padding-left: 250px;
+}
+#sidebar-wrapper {
+	width: 0;
+}
+#wrapper.sidebar-open #sidebar-wrapper {
+	width: 250px;
+}
+#page-content-wrapper {
+	padding: 20px;
+	position: relative;
+}
+#wrapper.sidebar-open #page-content-wrapper {
+	position: relative;
+	margin-right: 0;
 }
 
 .console-pre {
