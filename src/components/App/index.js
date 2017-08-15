@@ -23,31 +23,40 @@ import Examples from '../Examples';
 import RichEditorExample from '../Examples/RichEditor';
 import MediaEditorExample from '../Examples/MediaEditor';
 
-const App = () => (
-	<Router>
-		<div
-			id="wrapper"
-			className="sidebar-open"
-		>
-			<Route path="/" component={Sidebar}/>
+const App = () => {
+	let wrapperDivInstance;
+	const toggleSidebar = () => wrapperDivInstance.classList.toggle('sidebar-open');
+	const renderFn = (Component) => (props) => (<Component
+		{...props}
+		toggleSidebar={toggleSidebar}
+	/>);
+	return (
+		<Router>
+			<div
+				id="wrapper"
+				className="sidebar-open"
+				ref={c => { wrapperDivInstance = c; }}
+			>
+				<Route path="/" component={Sidebar}/>
 
-			<Route exact path="/" component={Introduction}/>
-			<Route path="/dependencies" component={Dependencies}/>
-			<Route path="/simplest-editor" component={SimplestEditor}/>
+				<Route exact path="/" render={renderFn(Introduction)}/>
+				<Route path="/dependencies" render={renderFn(Dependencies)}/>
+				<Route path="/simplest-editor" render={renderFn(SimplestEditor)}/>
 
-			<Route path="/data-model" component={DataModel}/>
-			<Route path="/selection-state" component={SelectionState}/>
-			<Route path="/content-state" component={ContentState}/>
-			<Route path="/entities" component={Entities}/>
-			<Route path="/decorators" component={Decorators}/>
+				<Route path="/data-model" render={renderFn(DataModel)}/>
+				<Route path="/selection-state" render={renderFn(SelectionState)}/>
+				<Route path="/content-state" render={renderFn(ContentState)}/>
+				<Route path="/entities" render={renderFn(Entities)}/>
+				<Route path="/decorators" render={renderFn(Decorators)}/>
 
-			<Route path="/utils" component={Utils}/>
+				<Route path="/utils" render={renderFn(Utils)}/>
 
-			<Route path="/examples" component={Examples}/>
-			<Route path="/rich-editor-example" component={RichEditorExample}/>
-			<Route path="/media-editor-example" component={MediaEditorExample}/>
-		</div>
-	</Router>
-);
+				<Route path="/examples" render={renderFn(Examples)}/>
+				<Route path="/rich-editor-example" render={renderFn(RichEditorExample)}/>
+				<Route path="/media-editor-example" render={renderFn(MediaEditorExample)}/>
+			</div>
+		</Router>
+	);
+}
 
 export default App

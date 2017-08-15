@@ -4,10 +4,12 @@ import {
 	convertToRaw,
 	CompositeDecorator,
 	Editor,
-	EditorState
+	EditorState,
+	Modifier,
 } from 'draft-js';
 
 import ConsoleButtons from '../../ConsoleButtons';
+import NewEntityInputs from './NewEntityInputs';
 
 const rawContent = {
 	blocks: [
@@ -93,10 +95,21 @@ export default class EntityEditorExample extends Component {
 		]);
 		const blocks = convertFromRaw(rawContent);
 		this.state = {
-			editorState: EditorState.createWithContent(blocks, decorator)
+			editorState: EditorState.createWithContent(blocks, decorator),
+			addEntityInputs: {
+				type: '',
+				mutability: '',
+				data: '',
+			}
 		};
+		this.setAddEntityInputs = (addEntityInputs) => this.setState({
+			addEntityInputs
+		});
 		this.focus = () => this.refs.editor.focus();
-		this.onChange = (editorState) => this.setState({editorState});
+		this.onChange = (editorState) => this.setState(
+			{ editorState },
+			() => this.getEntityAtSelection(this.state.editorState)
+		);
 		this.logContentState = () => {
 			const content = this.state.editorState.getCurrentContent();
 			this.props.consoleLog(JSON.stringify(content.toJS(), null, 4));
@@ -105,10 +118,66 @@ export default class EntityEditorExample extends Component {
 			const content = this.state.editorState.getCurrentContent();
 			this.props.consoleLog(JSON.stringify(convertToRaw(content), null, 4));
 		};
+		this.setEntityButtonHandler = () => this.setEntityAtSelection(this.state.addEntityInputs);
 	}
+
+	setEntityAtSelection = ({ type, mutability, data }) => {
+		const editorState = this.state.editorState;
+		const contentstate = editorState.getCurrentContent();
+
+		// Returns ContentState record updated to include the newly created DraftEntity record in it's EntityMap.
+		let newContentState = contentstate.createEntity(type, mutability, { url: data });
+
+		// Call getLastCreatedEntityKey to get the key of the newly created DraftEntity record.
+		const entityKey = contentstate.getLastCreatedEntityKey();
+
+		// Get the current selection
+		const selectionState = this.state.editorState.getSelection();
+
+		// Add the created entity to the current selection, for a new contentState
+		newContentState = Modifier.applyEntity(
+			newContentState,
+			selectionState,
+			entityKey
+		);
+
+		// Add newContentState to the existing editorState, for a new editorState
+		const newEditorState = EditorState.push(
+			this.state.editorState,
+			newContentState,
+			'apply-entity'
+		);
+
+		this.onChange(newEditorState);
+	}
+
+	getEntityAtSelection = (editorState) => {
+		const selectionState = editorState.getSelection();
+		const selectionKey = selectionState.getStartKey();
+		const contentstate = editorState.getCurrentContent();
+
+		// The block in which the selection starts
+		const block = contentstate.getBlockForKey(selectionKey);
+
+		// Entity key at the start selection
+		const entityKey = block.getEntityAt(selectionState.getStartOffset());
+		if (entityKey) {
+			// The actual entity instance
+			const entityInstance = contentstate.getEntity(entityKey);
+			const entityInfo = {
+				type: entityInstance.getType(),
+				mutability: entityInstance.getMutability(),
+				data: entityInstance.getData(),
+			}
+			this.props.consoleLog(JSON.stringify(entityInfo, null, 4));
+		} else {
+			this.props.consoleLog("No entity present at current selection!");
+		}
+	}
+
 	render() {
 		return (
-			<div style={styles.root}>
+			<div>
 				<div style={styles.editor} onClick={this.focus}>
 					<Editor
 						editorState={this.state.editorState}
@@ -120,10 +189,6 @@ export default class EntityEditorExample extends Component {
 				<ConsoleButtons
 					buttons={[
 						{
-							onClick: this.logContentState,
-							text: "Log ContentState",
-						},
-						{
 							onClick: this.logRawContentState,
 							text: "Log Raw ContentState",
 						},
@@ -131,7 +196,15 @@ export default class EntityEditorExample extends Component {
 							onClick: this.props.clearConsole,
 							text: "Clear Console",
 						},
+						{
+							onClick: this.setEntityButtonHandler,
+							text: "Add Entity (from inputs below) to Selection"
+						},
 					]}
+				/>
+				<NewEntityInputs
+					setAddEntityInputs={this.setAddEntityInputs}
+					addEntityInputs={this.state.addEntityInputs}
 				/>
 			</div>
 		);
@@ -173,11 +246,6 @@ const TokenSpan = (props) => {
 };
 
 const styles = {
-	root: {
-		fontFamily: '\'Helvetica\', sans-serif',
-		padding: 20,
-		width: 600
-	},
 	editor: {
 		border: '1px solid #ccc',
 		cursor: 'text',
