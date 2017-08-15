@@ -18,9 +18,17 @@ export default class MarkdownFileRenderer extends Component {
 						`<code class="hljs ${lang}">` +
 							`${highlightedCode}` +
 						'</code>' +
-					'</pre>' 
+					'</pre>'
 				);
 		};
+		renderer.image = (href, title, text) => (
+			'<img ' +
+				`class="img-rounded img-responsive readme-img" ` +
+				`src=${href} ` +
+				`alt=${text} ` +
+				`${ title ? `title=${title}` : ''}` +
+			'/>'
+		);
 		marked.setOptions({ renderer });
 	}
 

@@ -11,7 +11,7 @@ export default class EntitiesTut extends Component {
 	render() {
 		return (
 			<PageContainer {...this.props}>
-				<EditorAndConsoleContainer>
+				<EditorAndConsoleContainer editorTitle="Entity Editor Example">
 					<Editor/>
 				</EditorAndConsoleContainer>
 				<MarkdownFileRenderer mdFileURL={readmeFile}/>
