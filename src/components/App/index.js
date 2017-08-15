@@ -23,7 +23,7 @@ import Examples from '../Examples';
 import RichEditorExample from '../Examples/RichEditor';
 import MediaEditorExample from '../Examples/MediaEditor';
 
-import ControlledTextarea from '../ControlledTextarea';
+import Textareas from '../Textareas';
 
 const App = () => {
 	let wrapperDivInstance;
@@ -57,7 +57,7 @@ const App = () => {
 				<Route path="/rich-editor-example" render={renderFn(RichEditorExample)}/>
 				<Route path="/media-editor-example" render={renderFn(MediaEditorExample)}/>
 
-				<Route path="/textareas" render={renderFn(ControlledTextarea)}/>
+				<Route path="/textareas" render={renderFn(Textareas)}/>
 			</div>
 		</Router>
 	);

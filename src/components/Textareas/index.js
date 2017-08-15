@@ -16,11 +16,10 @@ export default class ControlledTextAreaTut extends Component {
 				<EditorAndConsoleContainer editorTitle="Controlled Textarea">
 					<ControlledTextarea/>
 				</EditorAndConsoleContainer>
-				<hr/>
+				<MarkdownFileRenderer mdFileURL={readmeFile}/>
 				<EditorAndConsoleContainer editorTitle="Tightly Controlled Textarea">
 					<TightlyControlledTextarea/>
 				</EditorAndConsoleContainer>
-				<MarkdownFileRenderer mdFileURL={readmeFile}/>
 			</PageContainer>
 		);
 	}

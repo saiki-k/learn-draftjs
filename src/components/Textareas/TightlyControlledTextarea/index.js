@@ -3,7 +3,7 @@ import StateInputs from './StateInputs.js';
 
 export default class TightlyControlledTextarea extends Component {
 	constructor(props) {
-		super(props)
+		super(props);
 		this.state = {
 			content: '',
 			selection: { startOffset: 0, endOffset: 0 }
@@ -63,13 +63,13 @@ export default class TightlyControlledTextarea extends Component {
 
 
 	updateTextarea = ({ content, selection }) => {
-		const updatedContent = content || this.textarea.value
+		const updatedContent = content || this.textarea.value;
 		const updatedSelection = selection || this.getSelection(this.textarea);
 		this.setState(
 			{ content: updatedContent, selection: updatedSelection },
 			() => {
-				this.setSelectionToDOM(this.textarea, updatedSelection)
-				this.logTextareaState()
+				this.setSelectionToDOM(this.textarea, updatedSelection);
+				this.logTextareaState();
 			}
 		);
 	}
