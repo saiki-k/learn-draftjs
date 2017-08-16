@@ -28,7 +28,7 @@ export default class TweetEditorExample extends Component {
 	}
 	render() {
 		return (
-			<div style={styles.root}>
+			<div>
 				<div style={styles.editor} onClick={this.focus}>
 					<Editor
 						editorState={this.state.editorState}
@@ -96,11 +96,6 @@ const HashtagSpan = (props) => {
 };
 
 const styles = {
-	root: {
-		fontFamily: '\'Helvetica\', sans-serif',
-		padding: 20,
-		width: 600
-	},
 	editor: {
 		border: '1px solid #ddd',
 		cursor: 'text',
