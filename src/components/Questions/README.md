@@ -1,4 +1,18 @@
-This is a maintained list of questions from [https://draftjs.slack.org](https://draftjs.slack.org). Feel free to edit this file here — https://github.com/fatman-/learn-draftjs/tree/master/src/components/Questions/README.md
+This is a list of questions from [https://draftjs.slack.org](https://draftjs.slack.org). Feel free to edit this page here — https://github.com/fatman-/learn-draftjs/tree/master/src/components/Questions/README.md
+
+---
+
+### Q Bounding react of a block
+
+Is there a way to grab the bounding rect of a sentence in Draft?
+
+### A
+You could use:
+```javascript
+document.querySelector(`div[data-offset-key="${blockKey}-0-0"]`).getBoundingClientRect()
+```
+
+---
 
 ### Q `forceSelection` & scrolling!
 
