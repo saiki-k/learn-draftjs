@@ -25,6 +25,8 @@ import MediaEditorExample from '../Examples/MediaEditor';
 
 import Textareas from '../Textareas';
 
+import Questions from '../Questions';
+
 const App = () => {
 	let wrapperDivInstance;
 	const toggleSidebar = () => wrapperDivInstance.classList.toggle('sidebar-open');
@@ -58,6 +60,8 @@ const App = () => {
 				<Route path="/media-editor-example" render={renderFn(MediaEditorExample)}/>
 
 				<Route path="/textareas" render={renderFn(Textareas)}/>
+
+				<Route path="/questions" render={renderFn(Questions)}/>
 			</div>
 		</Router>
 	);
