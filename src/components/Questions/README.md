@@ -2,9 +2,9 @@ This is a list of questions from [https://draftjs.slack.org](https://draftjs.sla
 
 ---
 
-### Q Bounding react of a block
+### Q bounding rect of a block
 
-Is there a way to grab the bounding rect of a sentence in Draft?
+Is there a way to grab the bounding rect of a ContentBlock in Draft?
 
 ### A
 You could use:
@@ -27,6 +27,8 @@ I'm not sure what I'm missing, I would have expected the scroll to happen automa
 `forceSelection` only updates the data model (and the corresponding DOM element) to apply the selection to a specified selection state, and for the editor to have focus! You should implement the scrolling feature yourself! Here's how you would do it; find the next block key; and if it isn't in the viewport, then write some JS to scroll that particular block in the DOM!
 
 Given a `blockKey` you can find the required block element in the DOM, using the following piece of code!
-```const domNodeForBlock = document.querySelector(`div[data-offset-key="${blockKey}-0-0"]`);```
+```javascript
+const domNodeForBlock = document.querySelector(`div[data-offset-key="${blockKey}-0-0"]`);
+```
 
 ---
