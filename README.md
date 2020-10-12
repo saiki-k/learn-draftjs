@@ -1,6 +1,6 @@
 # Learn DraftJS
 
-Learn DraftJS is an interactive learning resource. You can visit it, at [learn-draftjs.now.sh](https://learn-draftjs.now.sh)!
+Learn DraftJS is an interactive learning resource. You can visit it, at [learn-draftjs-now.vercel.app](https://learn-draftjs-now.vercel.app)!
 
 ## Running locally
 
