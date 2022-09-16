@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "babel-polyfill": "^6.23.0",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "draft-js": "^0.10.1",
     "highlight.js": "^10.4.1",
     "immutable": "^3.8.1",
